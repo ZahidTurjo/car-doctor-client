@@ -8,17 +8,17 @@ const Bookings = () => {
     const { user } = useContext(AuthContext)
     const [bookings, setBookings] = useState([])
     useEffect(() => {
-        axios.get(`http://localhost:5000/bookings?email=${user?.email}` ,{withCredentials:true})
+        axios.get(`https://car-doctor-server-k8gf3030d-zahid-turjos-projects.vercel.app/bookings?email=${user?.email}` , {withCredentials:true})
         .then(res=> setBookings(res.data))
 
-        // fetch(`http://localhost:5000/bookings?email=${user?.email}`)
+        // fetch(`https://car-doctor-server-k8gf3030d-zahid-turjos-projects.vercel.app/bookings?email=${user?.email}`)
         //     .then(res => res.json())
         //     .then(data => setBookings(data))
     }, [])
     console.log(bookings);
 
 //     const handelBookingConfirm = (id) => {
-//         fetch(`http://localhost:5000/bookings/${id}`, {
+//         fetch(`https://car-doctor-server-k8gf3030d-zahid-turjos-projects.vercel.app/bookings/${id}`, {
 //             method: 'PATCH',
 //             headers: {
 //                 'content-type': 'application/json'
@@ -36,7 +36,7 @@ const Bookings = () => {
 //     }
 
 const handleBookingConfirm = id => {
-    fetch(`http://localhost:5000/bookings/${id}`, {
+    fetch(`https://car-doctor-server-k8gf3030d-zahid-turjos-projects.vercel.app/bookings/${id}`, {
         method: 'PATCH',
         headers: {
             'content-type': 'application/json'

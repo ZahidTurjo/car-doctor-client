@@ -33,12 +33,12 @@ const AuthProvides = ({ children }) => {
             setLoading(false)
             // if user exists
             if(currentUser){
-                axios.post('http://localhost:5000/jwt',loggeedUser, {withCredentials:true})
+                axios.post('https://car-doctor-server-k8gf3030d-zahid-turjos-projects.vercel.app/jwt',loggeedUser, {withCredentials:true})
                 .then(res=>{
                     console.log(res.data);
                 })
             }else{
-                axios.post('http://localhost:5000/logout', loggeedUser, {withCredentials:true} )
+                axios.post('https://car-doctor-server-k8gf3030d-zahid-turjos-projects.vercel.app/logout', loggeedUser, {withCredentials:true} )
                 .then(res=>{
                     console.log('logOut',res.data);
                 })

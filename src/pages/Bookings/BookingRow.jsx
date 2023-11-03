@@ -8,7 +8,7 @@ const BookingRow = ({booking,setBookings,bookings,handleBookingConfirm}) => {
     const handleDelete = (id)=>{
         const proced= confirm('Are u sure to delete this item')
         if(proced){
-            fetch(`http://localhost:5000/bookings/${id}`,{
+            fetch(`https://car-doctor-server-k8gf3030d-zahid-turjos-projects.vercel.app/bookings/${id}`,{
                 method:'DELETE',
             })
             .then(res=> res.json())
